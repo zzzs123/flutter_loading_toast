@@ -1,5 +1,13 @@
 # Loading Toast
 
+A lightweight toast & loading overlay for Flutter.
+
+## Features
+
+- **Overlay-based toasts**: Show toast messages on top of everything using `Overlay`.
+- **Flexible positioning**: Control toast position with `Alignment`, e.g. `Alignment.topCenter`, `Alignment.center`, etc.
+- **No `BuildContext` required**: After initialization, you can show toasts without passing a `BuildContext`.
+- **Any widget as content**: Not only text – you can show widgets like `CircularProgressIndicator`, icons, or custom widgets.
 
 ## Installing
 
@@ -8,15 +16,14 @@ dependencies:
   loading_toast: ^latest
 ```
 
-## How to use
+## Setup
 
-if you want to use without context, should add `builder: LToast.init(),` in your `MaterialApp`/`CupertinoApp`:
+If you want to use it **without context**, add `builder: LToast.init(),` to your `MaterialApp` / `CupertinoApp`:
 
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,27 +34,29 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-Then, enjoy yourself:
+## Usage
 
 ```dart
-                LToast.showText('toast text');
+// Simple text toast (center)
+LToast.showText('toast text');
 
-                LToast.showText(
-                  'count: $_counter',
-                  alignment: Alignment.topCenter,
-                );
+// Text toast at topCenter
+LToast.showText(
+  'count: $_counter',
+  alignment: Alignment.topCenter,
+);
 
-                LToast.showLoading(
-                  const CircularProgressIndicator(),
-                );
+// Loading indicator (e.g. while waiting for a request)
+LToast.showLoading(
+  const CircularProgressIndicator(),
+);
 
-                LToast.show(
-                  const Icon(
-                          Icons.remove,
-                          color: Colors.orange,
-                        ),
-                );
-
-
+// Show any custom widget
+LToast.show(
+  const Icon(
+    Icons.remove,
+    color: Colors.orange,
+  ),
+);
 ```
 

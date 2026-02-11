@@ -181,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 LToast.showLoading(
                   const CircularProgressIndicator(),
                   alignment: Alignment.topCenter,
-                  absorbPointer: false,
+                  blockTap: false,
                 );
               },
               child: const Text(

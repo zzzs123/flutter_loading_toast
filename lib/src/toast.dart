@@ -77,35 +77,35 @@ class LToast {
       alignment: alignment,
       duration: duration,
       fadeDuration: fadeDuration,
-      absorbPointer: false,
+      blockTap: false,
       autoRemove: true,
     );
   }
 
-  /// if [absorbPointer] is true, blocks user interaction behind
+  /// When true, taps don't pass through to the content behind.
   static void showLoading(
     Widget child, {
     BuildContext? context,
     Alignment alignment = Alignment.center,
-    bool absorbPointer = true,
+    bool blockTap = true,
   }) {
     show(
       child,
       context: context,
       alignment: alignment,
-      absorbPointer: absorbPointer,
+      blockTap: blockTap,
       autoRemove: false,
     );
   }
 
-  /// if [absorbPointer] is true, blocks user interaction behind
+  /// When [blockTap] is true, taps don't pass through to the content behind.
   static void show(
     Widget child, {
     BuildContext? context,
     Alignment alignment = Alignment.center,
     Duration? duration,
     Duration? fadeDuration,
-    bool absorbPointer = false,
+    bool blockTap = false,
     bool autoRemove = true,
   }) {
     _instance._remove();
@@ -134,7 +134,7 @@ class LToast {
           autoRemove: autoRemove,
           child: _ToastCanvas(
             alignment: alignment,
-            absorbing: absorbPointer,
+            absorbing: blockTap,
             child: child,
           ),
         ),

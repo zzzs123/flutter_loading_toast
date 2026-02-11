@@ -1,6 +1,6 @@
 name: loading_toast
 description: "flutter toast, context not required, also can show loading indicator or else"
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/zzzs123/flutter_loading_toast
 
 environment:
