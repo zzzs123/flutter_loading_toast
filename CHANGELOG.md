@@ -1,5 +1,9 @@
 ## 0.0.2
 
+* bump
+
+## 0.0.2
+
 * absorbPointer-> blockTap
 
 ## 0.0.1
