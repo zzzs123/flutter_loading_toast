@@ -2,6 +2,8 @@
 
 A lightweight toast & loading overlay for Flutter.
 
+![](https://github.com/user-attachments/assets/9ba6d8b3-df58-4b55-8d79-ad7bc847fe45)
+
 ## Features
 
 - **Overlay-based toasts**: Show toast messages on top of everything using `Overlay`.
